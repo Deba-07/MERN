@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Javascript Output</h1>
+
+    <!-- code will start from here  -->
+
+    <div id="box1"></div>
+
+    <div class="box2"></div>
+
+    <!-- code will end here   ctrl + /  -->
+
+    <script>
+      document.getElementById("box1").innerHTML = "Hello World"; // 1st Way
+
+      document.querySelector(".box2").innerHTML = "Hello MERN"; // 2nd Way
+
+      // alert("Hello World");  3rd ways
+
+      console.log("Hello World"); //  4th Ways
+    </script>
+
+    <h2>Variables</h2>
+
+    <ul>
+      <li>var</li>
+      <li>Let</li>
+      <li>Const</li>
+    </ul>
+
+    <script>
+      var a = "Subham";
+
+      var a = "Debasish";
+
+      console.log(a);
+
+      let b = "Asutosh";
+
+      b = "Sridhar";
+
+      console.log(b);
+
+      // const
+
+      const c = "Altab";
+
+      // c = 'Himanshu';
+
+      console.log(c);
+
+      var d;
+    </script>
+
+    <h2>Javascript Data - 8 - type</h2>
+
+    <ul>
+      <li>String (abcdef213213sdsad)</li>
+      <li>Number (1321321 , 23.4)</li>
+      <li>Bigint (12345678901)</li>
+      <li>Boolean (True , False)</li>
+      <li>Undefined ()</li>
+      <li>Null</li>
+      <li>Object</li>
+      <li>Symbol</li>
+    </ul>
+
+    <h2>Javascript Function</h2>
+
+    <div id="output"></div>
+
+    <div id="dynamic_output"></div>
+
+    <script>
+      function add() {
+        return 5 + 4;
+      }
+      document.querySelector("#output").innerHTML = add();
+
+      function add2(a, b) {
+        return a + b;
+      }
+
+      document.querySelector("#dynamic_output").innerHTML = add2(10, 50);
+    </script>
+
+    <h2>Object</h2>
+
+    <h4 id="object_output"></h4>
+
+    <script>
+      const sekhar = {
+        fullname: "Subham",
+        college: "GMU",
+        girlfrind: false,
+      };
+
+      sekhar.age = 22;
+      delete sekhar.college;
+
+      sekhar.college = "NIT RKL";
+
+      document.querySelector("#object_output").innerHTML = sekhar.college;
+    </script>
+  </body>
+</html>

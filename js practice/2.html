@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Javascript Condition</h2>
+
+    <script>
+        let mark  = 75;
+
+        // if  , else if , else 
+
+        if(mark >= 90){
+            console.log("Grade A+")
+        }
+        else if(mark >= 80){
+            console.log("Grade A")
+        }else if(mark >= 70){
+            console.log("Grade B+")
+        }
+        else{
+            console.log("You'r Fail");
+        }
+
+        // condition ? true : false 
+
+        let age  = 18;
+
+        let canvote = age >= 18 ? 'You can vote' : 'You can\'t Vote'
+
+        console.log(canvote);
+
+
+        let marks  = 50;
+
+        let grade = marks >= 90 ? 'A+'
+                    : marks >= 70 ? 'B+'
+                    : marks >= 50 ? 'B'
+                    : 'Fail';
+
+        console.log(grade);
+
+    </script>
+
+
+
+    <h2>Switch Case</h2>
+
+    <script>
+
+        let day = "Monday";
+
+        switch (day) {
+            case 'Monday':
+                console.log("Today Monday");
+            break;
+            case 'tuseday':
+                console.log("Today is Tuseday");
+            break;
+
+            default:
+                console.log("Holiday");
+        }
+    </script>
+
+    <h2>Loops :  for, While, Do-while , foreach</h2>
+
+    <script>
+
+        for(let i = 0; i < 5; i++){
+           console.log("Number " + i)
+        }
+
+        // while loop
+
+        let num = 1;
+        while(num <= 5){
+            num ++;
+            console.log("While Number", num);
+           
+        }
+
+        // Do While 
+
+        let count = 1;
+        do {
+            console.log("Do-while Number", count);
+            count ++;
+        }while(count <= 5);
+
+    </script>
+
+
+    <h2>Arrow Function</h2>
+
+
+    <script>
+        // 5  , 6 
+
+        const add = (a,b) => a + b;
+        
+        console.log(add(5,6));
+
+
+    </script>
+
+
+    <h2>Array </h2>
+
+
+    <script>
+
+        let fruits = ["Banana","Apple","Chery","Vanila"];
+
+        console.log(fruits.length);  // 
+        
+        console.log(fruits);
+
+        fruits.push("Orange");
+
+        console.log(fruits);
+
+        fruits.pop(); // Remove
+
+        console.log(fruits);
+
+        fruits.unshift("Grapse")
+
+        console.log(fruits);
+
+        fruits.shift(); // Remove First
+
+        console.log(fruits);
+
+
+        fruits.forEach(fruit => {
+            console.log(fruit);
+        });
+
+
+    </script>
+    
+
+    <h2>DOM</h2>
+
+    <button id="changeColor">Change Color</button>
+
+
+    <script>
+        document.querySelector("#changeColor").addEventListener("click" , function(){
+            document.body.style.backgroundColor = 'lightgreen';           
+        })
+    </script>
+
+
+    <h2>Javascript map</h2>
+
+    <script>
+
+        let number = [1,2,3,4,5];
+
+        let dbl = number.map(nums => nums * 2);
+
+        console.log(dbl);
+
+
+
+        let student = [
+            { name : "Subham" , age : 22 },
+            { name : "Debasish" , age : 22 },
+            { name : "Himanshu" , age : 30 },
+            { name : "Asuthosh" , age : 22 },
+            { name : "Sridahar" , age : 22 }
+        ]
+
+        let student_name  = student.map(users => users.name);
+
+        console.log(student_name);
+
+    </script>
+
+</body>
+</html>

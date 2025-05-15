@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API data in table</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      th,
+      td {
+        border: 2px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>API Data In Table</h2>
+    <table id="dataTable">
+      <thead>
+        <td>UserId</td>
+        <td>Id</td>
+        <td>Title</td>
+        <td>Body</td>
+      </thead>
+      <tbody>
+        <!-- Api data to be inserted here -->
+      </tbody>
+    </table>
+    <script>
+      async function getData() {
+        try {
+          const apiUrl = await fetch(
+            "https://jsonplaceholder.typicode.com/posts"
+          );
+          const data = await apiUrl.json();
+          const tableBody = document.querySelector("#dataTable tbody");
+          data.forEach((user) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                        <td>${user.userId}</td>
+                        <td>${user.id}</td>
+                        <td>${user.title}</td>
+                        <td>${user.body}</td>
+                    `;
+            tableBody.appendChild(row);
+          });
+        } catch (error) {
+          console.log("Failed to fetch data", error);
+        }
+      }
+      getData();
+    </script>
+  </body>
+</html>

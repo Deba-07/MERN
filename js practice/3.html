@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Javascript Filter</h2>
+    <script>
+      let arr = [2, 3, 4, 5, 6];
+      // Find Even
+      let eventNumber = arr.filter((num) => num % 2 === 0);
+      console.log(eventNumber);
+      let arr2 = [1, 2, 3, 4, 5, 6];
+      // WaNT To Remove Number 5
+      let Removenumber = arr2.filter((nums) => nums !== 5);
+      console.log(Removenumber);
+      let cart = [
+        {
+          product: "Macbook",
+          Price: 100000,
+        },
+        {
+          product: "Dell",
+          Price: 6000,
+        },
+        {
+          product: "HP",
+          Price: 40000,
+        },
+      ];
+      let totalprice = cart.reduce((total, item) => total + item.Price, 0);
+      console.log(totalprice);
+    </script>
+    <h2>Javascript Find</h2>
+    <script>
+      let student = [
+        { name: "Sridahar", age: 18 },
+        { name: "Subham", age: 22 },
+        { name: "Debasish", age: 33 },
+        { name: "Himanshu", age: 30 },
+        { name: "Asuthosh", age: 25 },
+      ];
+
+      let Findstudent = student.find((user) => user.age <= 25);
+      console.log(Findstudent);
+      let hasAdult = student.some((user) => user.age > 23);
+      console.log(hasAdult);
+      let hasAdults = student.every((user) => user.age > 23);
+      console.log(hasAdults);
+    </script>
+    <h2>Javascript Sorting</h2>
+    <script>
+      let numbers = [1, 4, 6, 3, 3, 7, 8, 3, 4];
+      numbers.sort((a, b) => a - b); // Ascending
+      console.log(numbers);
+      student.sort((a, b) => a.age - b.age);
+      console.log(student);
+    </script>
+    <h2>Javascript Callback + Callback Hell</h2>
+    <script>
+      function greet(name, saygoodbye) {
+        console.log("Hello ", name);
+        saygoodbye();
+      }
+      function saygoodbye() {
+        console.log("Goodbye");
+      }
+      greet("Asutosh", saygoodbye);
+    </script>
+    <script>
+      function fetchData(callback) {
+        setTimeout(() => {
+          console.log("Data Fetched");
+          callback();
+        }, 2000);
+      }
+      function processdata() {
+        console.log("Processing Data");
+      }
+      fetchData(processdata);
+    </script>
+    <h2>Callback Hell</h2>
+    <script>
+      function step1(callback) {
+        setTimeout(() => {
+          callback();
+          console.log("Step 1 Completed");
+        }, 2000);
+      }
+      function step2(callback) {
+        setTimeout(() => {
+          callback();
+          console.log("Step 2 Completed");
+        }, 2000);
+      }
+      function step3(callback) {
+        setTimeout(() => {
+          callback();
+          console.log("Step 3 Completed");
+        }, 2000);
+      }
+      function step4() {
+        console.log("Step 4 Completed");
+      }
+      step1(() => {
+        step2(() => {
+          step3(() => {
+            step4();
+          });
+        });
+      });
+    </script>
+    <h2>Await / Async</h2>
+    <script>
+      function step1() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve();
+            console.log("New Step 1 Completed");
+          }, 4000);
+        });
+      }
+      function step2() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve();
+            console.log("New Step 2 Completed");
+          }, 4000);
+        });
+      }
+      function step3() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve();
+            console.log("New Step 3 Completed");
+          }, 4000);
+        });
+      }
+      function step4() {
+        console.log("New Step 4 Completed");
+      }
+      step1()
+        .then(() => step2())
+        .then(() => step3())
+        .then(() => step4())
+        .catch((error) => console.log("Error", error));
+      async function executesteps() {
+        await step1();
+        await step2();
+        await step3();
+        step4();
+      }
+      executesteps();
+    </script>
+    <h2>Fetch API</h2>
+    <script>
+      async function getpost() {
+        try {
+          let response = await fetch(
+            "https://jsonplaceholder.typicode.com/posts"
+          );
+          let data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.log("Error", error);
+        }
+      }
+      getpost();
+    </script>
+    <h2>Spread Operator (...)</h2>
+    <script>
+      let num = [1, 2, 3];
+      let num2 = [5, 7, 8];
+      let fullnum = [...num, ...num2];
+      console.log(fullnum);
+    </script>
+  </body>
+</html>
