@@ -57,3 +57,20 @@ if(userLoggedIn && debitCard){
     console.log("Log-in view the resourses")
 }
 
+// Nullish Coalescing Operator (??)
+
+let val1
+// val1 = 5 ?? 10
+// val1 = null ?? 10
+// val1 = undefined ?? 15
+val1 = null ?? 10 ?? 20
+
+console.log(val1)
+
+// Ternary Operator
+
+// Condition ? true : false
+
+const age = 20
+
+age >= 18 ? console.log("You can drive.") : console.log("You can't drive.")
