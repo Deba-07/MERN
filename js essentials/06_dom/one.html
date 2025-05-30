@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM learning</title>
+    <style>
+      body {
+        background-color: #150202;
+        color: #c7cef1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-black">
+      <h1 class="heading">Learning DOM</h1>
+      <p id="first-paragraph">Lorem ipsum dolor sit amet.</p>
+    </div>
+    <script>
+      const heading = document.querySelector(".heading");
+
+      heading.innerHTML = "<h1>Introduction to DOM</h1>";
+      heading.style.backgroundColor = "#5c0808";
+      heading.style.textAlign = "center";
+      heading.style.borderRadius = "10px";
+
+      document.getElementById("first-paragraph").innerHTML =
+        "<p>This is a page showing document object module in javascript</p>";
+    </script>
+  </body>
+</html>
