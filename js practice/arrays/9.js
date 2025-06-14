@@ -9,3 +9,8 @@ let myArr = [3, 5, 9, 1, 2];
 let myArr2 = [10, 12, 11, 15, 13];
 
 console.log(sortedArr(myArr, myArr2));
+
+let arr = [1, 2, 3, 4, 5];
+let arr2 = [6, 7, 8, 9, 10];
+
+console.log(sortedArr(arr, arr2));
