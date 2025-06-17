@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #210101;
+        color: #b3b1af;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>XML Api request</h1>
+  </body>
+  <script>
+    const requestUrl = "https://api.github.com/users/deba-07";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        console.log(typeof data);
+        console.log(data.followers);
+        card.innerHTML = `<span>User: ${data.login}</span><img src=${data.avatar_url}><span>Followers: ${data.followers}</span>`;
+      }
+    };
+    xhr.send();
+
+    const card = document.createElement("div");
+    card.style.border = "2px solid aqua";
+    card.style.height = "420px";
+    card.style.width = "350px";
+    card.style.marginLeft = "35%";
+    card.style.color = "white";
+    card.style.display = 'flex';
+    card.style.flexDirection = "column"
+    card.style.gap = '10px'
+
+    document.body.appendChild(card);
+  </script>
+</html>
